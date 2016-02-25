@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="org.crazyit.album.domain">
+	<!-- 每个class元素映射一个持久化类 -->
+	<class name="Photo" table="photo_inf">
+		<id name="id" type="int" column="photo_id">
+			<!-- 指定主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="title" type="string"/>
+		<property name="fileName" type="string"/>
+		<!-- 映射和User实体的N-1关联 -->
+		<many-to-one name="user" column="owner_id"
+			class="User" not-null="true"/>
+	</class>
+</hibernate-mapping>
