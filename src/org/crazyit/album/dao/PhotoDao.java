@@ -17,7 +17,7 @@ import org.crazyit.common.dao.*;
  */
 public interface PhotoDao extends BaseDao<Photo>
 {
-	//以常量控制每页显示的相片数
+	//以常量控制每页显示的相片数  ++++++
 	final int PAGE_SIZE = 3;
 	/**
 	 * 查询属于指定用户的相片，且进行分页控制
